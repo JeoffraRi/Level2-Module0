@@ -1,6 +1,7 @@
 package arrays;
 
 import java.lang.reflect.Array;
+import java.util.Random;
 
 public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
@@ -20,13 +21,34 @@ public class _00_ArrayCheatSheet {
 	}
 		
 		//6. make an array of 50 integers
-		
+	   int[] numnumnum = new int [50];
+	   Random itsSoRandom = new Random();
 		//7. use a for loop to make every value of the integer array a random number
-		
+		for(int i = 0; i<50; i++) {
+			numnumnum[i] = itsSoRandom.nextInt(50);
+			//System.out.println(numnumnum[i]);
+		}
 		//8. without printing the entire array, print only the smallest number in the array
+		int lowest = 50;
+		for(int a = 0; a<numnumnum.length; a++) {
+			if(numnumnum[a]<lowest) {
+				lowest = numnumnum[a];
+			}
+		}
+		System.out.println(lowest);
 		
 		//9 print the entire array to see if step 8 was correct
+		for(int e = 0; e<numnumnum.length; e++) {
+			System.out.println(numnumnum[e]);
+		}
 		
 		//10. print the largest number in the array.
-	}
+		int biggest = 50;
+		for(int b = 0; b<numnumnum.length; b++) {
+			if(numnumnum[b]>biggest) {
+				lowest = numnumnum[b];
+			}
+		}
+		System.out.println(biggest);
+      	}
 }
