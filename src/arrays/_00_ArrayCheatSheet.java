@@ -49,6 +49,6 @@ public class _00_ArrayCheatSheet {
 				lowest = numnumnum[b];
 			}
 		}
-		System.out.println(biggest);
+		System.out.println(biggestss);
       	}
 }
