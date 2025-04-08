@@ -47,7 +47,11 @@ for(int a = 0; a<5; a++) {
 	if(broBots[a].getY()<50) {
 		broBots[a].setY(51);
 		broBots[a].turn(-90);
-		if(broBots[a].getX()<10) {
+	}
+	if(broBots[a].getX()<50) {
+		broBots[a].setX(51);
+		broBots[a].turn(-90);
+		
 		if(broBots[a].getX()<760)
 		System.out.println("Robot number "+a+" is the winner of the 2025 Formula One Grand Prix!");
 		winner = true;
@@ -58,4 +62,3 @@ for(int a = 0; a<5; a++) {
 }
 		}
 	}
-}
