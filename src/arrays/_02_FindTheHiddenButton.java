@@ -24,6 +24,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	
 	//2 create an int variable called hiddenButton
 	int hiddenButton = 0;
+	int coolRandom = 0;
 	
 	public static void main(String[] args) {
 		new _02_FindTheHiddenButton().start();
@@ -61,10 +62,10 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//11. set the JFrame to visible.
 		window.setVisible(true);
 		//12. Give the user the instructions for the game.
-		JOptionPane.showMessageDialog(null, "Click the button that says ME");
+		JOptionPane.showMessageDialog(null, "Try to find the hidden button!");
 		//13. initialize the hiddenButton variable to a random number less than the int created in step 3
 		Random random = new Random();
-		int coolRandom = random.nextInt(oneCoolNumba);
+		coolRandom = random.nextInt(oneCoolNumba);
 		//14. Set the text of the JButton located at hiddenButton to  "ME"
 		//buttons[coolRandom].setText("ME!!!!");
 		//15. Use Thread.sleep(1000); to pause the program.
@@ -84,11 +85,14 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton)e.getSource();
 		System.out.println(buttonClicked.getText());
+		String stringButton = (buttonClicked.getText());
+		int intButton = 0;
+		intButton = Integer.parseInt(stringButton);
 		//17. if the hiddenButton is clicked, tell the user that they win.
-	//	if() {
-			//JOptionPane.showMessageDialog(null, "YOU WIN!!!! :D");
+		if(intButton == coolRandom) {
+			JOptionPane.showMessageDialog(null, "YOU WIN!!!! :D");
 		}
 		
 		//18. else tell them to try again
 	}
-//}
+}
