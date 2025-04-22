@@ -80,7 +80,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//16. Set the text of the JButton located at hiddenButton to be blank.
 		//buttons[coolRandom].setText(String);
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton)e.getSource();

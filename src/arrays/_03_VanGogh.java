@@ -7,14 +7,14 @@ import processing.core.PImage;
  * 
  * In this class:
  * 1. Declare a PImage array variable as a member variable in this class.
- *    DO NOT initialize it.
- * 
+ *    DO NOT initialize it. */
+ /* 
  * 2. In the initializePaintings() method, initialize the PImage array to
  *    contain 4 images.
  * 
  * 3. Use the loadImage() method to assign each of the 4 images in the /images
  *    folder to an index in the PImage array
- *    "starryNight.jpg", "strawHatPortrait.jpg",
+ *    "starryNight.jpg", "strawHatPortrait.jpg",`
  *    "wheatField.jpg", "painterOnRoad.jpg"
  * 
  * 4. Declare a member variable to keep track of the current image index from the
@@ -47,8 +47,10 @@ import processing.core.PImage;
  */
 
 public class _03_VanGogh extends PApplet {
+	PImage [] memberArray;
     PImage canvas;
     PImage paintbrushCursor;
+    int imageIndex;
     boolean initializeCanvas = true;
     
     /*
@@ -56,12 +58,15 @@ public class _03_VanGogh extends PApplet {
      */
     Brush brush;
     
+    
     void initializePaintings() {
+        PImage [] memberArray = null;
+       memberArray[0] = loadImage("painterOnRoad.jpg");
+       imageIndex = 0;
         
     }
-    
     void selectNextPainting() {
-        
+        brush.setNewPainting(memberArray[imageIndex]);
     }
 
     @Override
