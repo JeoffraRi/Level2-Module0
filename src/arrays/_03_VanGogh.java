@@ -60,13 +60,19 @@ public class _03_VanGogh extends PApplet {
     
     
     void initializePaintings() {
-        PImage [] memberArray = null;
-       memberArray[0] = loadImage("painterOnRoad.jpg");
+       memberArray = new PImage[5];
+       memberArray[0] = loadImage("./images/rowancrazy.jpg");
+       memberArray[1] = loadImage("./images/starryNight.jpg");
+       memberArray[2] = loadImage("./images/strawHatPortrait.jpg");
+       memberArray[3] = loadImage("./images/wheatField.jpg");
+       brush.setNewPainting(memberArray[0]);
        imageIndex = 0;
         
     }
-    void selectNextPainting() {
+    void selectNextPainting() { 
+    	System.out.println(imageIndex);
         brush.setNewPainting(memberArray[imageIndex]);
+       
     }
 
     @Override
@@ -80,11 +86,11 @@ public class _03_VanGogh extends PApplet {
     public void setup() {
         surface.setResizable(true);
         
-        canvas = loadImage("canvas.jpg");
+        canvas = loadImage("./images/canvas.jpg");
         
         brush = new Brush(this);
 
-        paintbrushCursor = loadImage("paintbrushCur.png");
+        paintbrushCursor = loadImage("./images/paintbrushCur.png");
         paintbrushCursor.resize(22 * 2, 28 * 2);
         cursor(paintbrushCursor);
 
@@ -109,8 +115,10 @@ public class _03_VanGogh extends PApplet {
             if (key == 'r') {
                 image(canvas, 0, 0);
             } else if (key == 32) {
-                // SPACE key pressed--go to next painting
+                // SPACE key pressed--go to next painting  
+            	imageIndex++;
                 selectNextPainting();
+              
 
                 //canvas.resize(width, height);
                 initializeCanvas = true;
